@@ -2,14 +2,15 @@ function getBooksTemplate(index) {
     return /*html*/ `
     <article class="book">
         <h2>${books[index].name}</h2>
-        <div class="book-img"></div>
+        <div class="book-img">
+            <!-- <img src="./assets/icons/book_cover.png" alt="Book Cover"> -->
+            <img src="${books[index].cover}" alt="${books[index].name}" />
+        </div>
         <section class="price-likes">
             <p class="price">${books[index].price} €</p>
             <div class="likes">
                 <p>${books[index].likes}</p>
-                <div class="like-icon">
-                    <img src="./assets/icons/favorite.png" alt="Herz Icon">
-                </div>
+                <div class="like-icon" id="like${index}"></div>
             </div>
         </section>
         <section class="author-data">
@@ -40,4 +41,28 @@ function getBooksTemplate(index) {
                 </div>
             </section>
     </article>`;
+}
+
+function getCommentsTemplate(i, m) {
+    return /*html*/ `
+        <div class="comments">
+            <p class="comment-user">[${books[i].comments[m].name}]</p>
+            <p class="book-comment">:${books[i].comments[m].comment}</p>
+        <div>
+    `;
+}
+
+function getHeartIconTemplate(index) {
+    return /*html*/ `
+        <img onclick="setFavorite(${index})"
+        src="./assets/icons/favorite.png"
+        alt="Herz Icon"></img>
+    `;
+}
+
+function getFilledHeartIconTemplate(index) {
+    return /*html*/ `
+        <img onclick="setFavorite(${index})"
+        src="./assets/icons/red_heart_filled.png" alt="Herz Icon">
+    `;
 }

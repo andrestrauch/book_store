@@ -3,10 +3,11 @@ let books = [
         name: "Die Geheimnisse des Ozeans",
         author: "Clara Meer",
         likes: 1250,
-        liked: true,
+        liked: false,
         price: "19.99",
         publishedYear: 2018,
         genre: "Fantasy",
+        cover: "./assets/img/book_cover1.png",
         comments: [
             {
                 name: "Leser123",
@@ -43,21 +44,18 @@ let books = [
         price: "14.50",
         publishedYear: 2021,
         genre: "Fantasy",
-        comments: [
-            {
-                name: "",
-                comment: "",
-            },
-        ],
+        cover: "./assets/img/book_cover2.png",
+        comments: [],
     },
     {
         name: "Die Farben des Himmels",
         author: "Laura Blau",
         likes: 1520,
-        liked: true,
+        liked: false,
         price: "22.95",
         publishedYear: 2019,
         genre: "Romantik",
+        cover: "./assets/img/book_cover3.png",
         comments: [
             {
                 name: "LeserPeter",
@@ -94,6 +92,7 @@ let books = [
         price: "18",
         publishedYear: 2020,
         genre: "Science-Fiction",
+        cover: "./assets/img/book_cover4.png",
         comments: [
             {
                 name: "BuchKenner",
@@ -111,16 +110,12 @@ let books = [
         name: "Der letzte Wächter",
         author: "Sabine Grün",
         likes: 1300,
-        liked: true,
+        liked: false,
         price: "16.75",
         publishedYear: 2017,
         genre: "Fantasy",
-        comments: [
-            {
-                name: "",
-                comment: "",
-            },
-        ],
+        cover: "./assets/img/book_cover5.png",
+        comments: [],
     },
     {
         name: "Im Schatten des Mondes",
@@ -130,6 +125,7 @@ let books = [
         price: "12.3",
         publishedYear: 2022,
         genre: "Science-Fiction",
+        cover: "./assets/img/book_cover6.png",
         comments: [
             {
                 name: "BücherLiebhaber",
@@ -147,10 +143,11 @@ let books = [
         name: "Jenseits der Sterne",
         author: "Oliver Schwarz",
         likes: 1450,
-        liked: true,
+        liked: false,
         price: "21",
         publishedYear: 2015,
         genre: "Science-Fiction",
+        cover: "./assets/img/book_cover7.png",
         comments: [
             {
                 name: "Leser123",
@@ -167,6 +164,7 @@ let books = [
         price: "17.50",
         publishedYear: 2020,
         genre: "Fantasy",
+        cover: "./assets/img/book_cover8.png",
         comments: [
             {
                 name: "Bookworm92",
@@ -179,10 +177,11 @@ let books = [
         name: "Liebe in Zeiten des Krieges",
         author: "Emilia Rot",
         likes: 1800,
-        liked: true,
+        liked: false,
         price: "19.99",
         publishedYear: 2016,
         genre: "Romantik",
+        cover: "./assets/img/book_cover9.png",
         comments: [
             {
                 name: "Bibliophile23",
@@ -202,3 +201,6 @@ let books = [
         ],
     },
 ];
+
+let filter = "";
+let bookRef = document.getElementById(`MyBooks`);

@@ -12,18 +12,50 @@
         <script src="./scripts/db.js" defer></script>
         <script src="./scripts/templates.js" defer></script>
         <script src="./script.js" defer></script>
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/icons/favicon.png"
+        />
     </head>
-    <body onload="renderBooks()">
-        <header>
-            <h1>Mein Bücherladen</h1>
+    <body onload="init()">
+        <header class="header">
+            <section class="header-content">
+                <h1>Mein Bücherladen</h1>
+            </section>
         </header>
+
         <main>
+            <section class="book-filter">
+                <button
+                    onclick="setFilterToAll()"
+                    class="filter-btn"
+                    id="filterAll"
+                >
+                    Alle anzeigen
+                </button>
+                <button
+                    onclick="setFilterToFav()"
+                    class="filter-btn"
+                    id="filterLiked"
+                >
+                    Nur Favoriten
+                </button>
+            </section>
+
             <section class="book-container" id="MyBooks">
                 <div>Test</div>
             </section>
         </main>
-        <footer>
-            <p>&copy; 2026 Andre Strauch GitHub</p>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Andre Strauch</p>
+                <a href="https://github.com/andrestrauch" target="_blank">
+                    GitHub
+                </a>
+            </div>
         </footer>
     </body>
 </html>
