@@ -23,7 +23,7 @@ function renderBooks(i) {
     commentRef.innerHTML = "";
 
     if (books[i].comments.length > 0) {
-        for (let m = books[i].comments.length - 1; m >= 0; m = m - 1) {
+        for (let m = books[i].comments.length - 1; m >= 0; m--) {
             commentRef.innerHTML += getCommentsTemplate(i, m);
         }
     }
@@ -31,16 +31,16 @@ function renderBooks(i) {
 
 function addComment(index) {
     let inputRef = document.getElementById(`inputComment${index}`).value;
-
+    let obj = [{ name: "", comment: "" }];
     if (inputRef != "") {
-        let obj = [{ name: "DA User", comment: inputRef }];
+        obj.name = "DA User";
+        obj.comment = inputRef;
 
+        console.log(books[index].comments.length);
         books[index].comments.push(obj);
-
-        console.log(books[index]);
-        saveToLocalStorage();
+        console.log(books[index].comments);
+        renderFunction();
     }
-    renderFunction();
     inputRef.value = "";
 }
 
@@ -62,7 +62,6 @@ function setFavorite(index) {
 
     setLikes(index);
     renderFunction();
-    saveToLocalStorage();
 }
 
 function setLikes(index) {
@@ -79,39 +78,39 @@ function setFilterToAll() {
     filter = "all";
     filterRef = document.getElementById(`filterAll`);
     RemoveRef = document.getElementById(`filterLiked`);
-    filterRef.classList.add(`activAll`);
-    RemoveRef.classList.remove(`activLiked`);
+    filterRef.classList.add(`activ-all`);
+    RemoveRef.classList.remove(`activ-liked`);
     renderFunction();
     saveToLocalStorage();
 }
 
-function setFilterToFav() {
+function setFilterToFavorite() {
     filter = "like";
     filterRef = document.getElementById(`filterLiked`);
     RemoveRef = document.getElementById(`filterAll`);
-    filterRef.classList.add(`activLiked`);
-    RemoveRef.classList.remove(`activAll`);
+    filterRef.classList.add(`activ-liked`);
+    RemoveRef.classList.remove(`activ-all`);
     renderFunction();
     saveToLocalStorage();
 }
 
 function saveToLocalStorage() {
-    localStorage.setItem("books", JSON.stringify(books));
-    localStorage.setItem("filter", JSON.stringify(filter));
+    localStorage.setItem("filterKey", JSON.stringify(filter));
+    localStorage.setItem("bookKey", JSON.stringify(books));
 }
 
 function getFromLocalStorage() {
     let loadedData = "";
-    loadedData = JSON.parse(localStorage.getItem("books"));
+    loadedData = JSON.parse(localStorage.getItem("bookKey"));
     if (loadedData != null) {
         books = loadedData;
     }
     loadedData = "";
-    loadedData = JSON.parse(localStorage.getItem("filter"));
+    loadedData = JSON.parse(localStorage.getItem("filterKey"));
     if (loadedData != null) {
         filter = loadedData;
     }
     if (filter == "") setFilterToAll();
     if (filter == "all") setFilterToAll();
-    if (filter == "like") setFilterToFav();
+    if (filter == "like") setFilterToFavorite();
 }

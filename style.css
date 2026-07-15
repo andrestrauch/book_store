@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .comments::-webkit-scrollbar {
     width: var(--sb-size);
 }
@@ -173,10 +174,10 @@ main {
 
                     --sb-track-color: rgba(255, 255, 255, 0);
                     --sb-thumb-color: rgb(0, 0, 0);
-                    --sb-size: 8px;
+                    --sb-size: 6px;
 
                     .comment-user {
-                        width: 36.5%;
+                        width: 98px;
                         height: 20px;
                         display: flex;
                         font-size: 12px;
@@ -264,11 +265,11 @@ main {
     }
 }
 
-.activAll {
+.activ-all {
     background-color: yellow;
 }
 
-.activLiked {
+.activ-liked {
     background-color: red;
 }
 
@@ -295,7 +296,7 @@ main {
         }
 
         a {
-            font-size: 18px;
+            font-size: 17px;
             text-decoration: none;
             color: rgba(153, 172, 179, 1);
         }
