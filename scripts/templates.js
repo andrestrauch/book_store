@@ -55,8 +55,7 @@ function getCommentsTemplate(i, m) {
 function getHeartIconTemplate(index) {
     return /*html*/ `
         <img onclick="setFavorite(${index})"
-        src="./assets/icons/favorite.png"
-        alt="Herz Icon"></img>
+        src="./assets/icons/favorite.png" alt="Herz Icon"></img>
     `;
 }
 
