@@ -32,13 +32,14 @@ function renderBooks(i) {
 
 function addComment(index) {
     let inputRef = document.getElementById(`inputComment${index}`).value;
-    let obj = [{ name: "", comment: "" }];
+    let obj = { name: "", comment: "" };
 
     if (inputRef != "") {
         obj.name = "DA User";
         obj.comment = inputRef;
         books[index].comments.push(obj);
         renderFunction();
+        saveToLocalStorage();
     }
 
     inputRef.value = "";
